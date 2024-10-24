@@ -16,7 +16,12 @@ This is the code repository corresponding to the manuscript.
 </div>
 
 ## Requirements
-This repository is dependent on [Floris v4.1](https://github.com/NREL/floris), [MoorPy v1.0](https://github.com/NREL/MoorPy) and [Pytorch v2.4](https://pytorch.org/)
+This repository is dependent on [Floris v4.1](https://github.com/NREL/floris), [MoorPy v1.0](https://github.com/NREL/MoorPy) and [Pytorch v2.4](https://pytorch.org/).
 
-## 
+## Quick Use
+RUn moor_matrix.py to see the mooring configurations.
+
+Run floris_environment.py to see the iteration process of the model.
+
+Run main.py to train a DRL agent for floating wind farm. 
 
