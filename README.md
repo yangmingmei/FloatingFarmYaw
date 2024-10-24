@@ -1,4 +1,4 @@
 # FloatingFarmYaw
-This is the code repository corresponding to “Floating Offshore Wind Farm Yaw Control via Model-based Deep Reinforcement Learning”, submitted to IEEE Power & Energy General Meeting
+This is the code repository corresponding to “Floating Offshore Wind Farm Yaw Control via Model-based Deep Reinforcement Learning”, submitted to IEEE Power & Energy Society General Meeting
 
 ## Wake effect
