@@ -11,5 +11,6 @@ This is the code repository corresponding to the manuscript.
      <img src="Results/Wind Farm.png" height="480"/> 
 </div>
 <div align=center>
-      Fig.1 Simulation results (a) Simplified model (b) Fast.Farm under the under the model based DRL and (c) Simplified model (b) Fast.Farm under the under conventional yaw control.
+      Fig.1 Simulation results (a) Simplified model (b) Fast.Farm under the under the model based DRL 
+      and (c) Simplified model (d) Fast.Farm under the under conventional yaw control.
 </div>
