@@ -16,7 +16,7 @@ This is the code repository corresponding to our manuscript.
 </div>
 
 ## Requirements
-This repository is dependent on [Floris v4.1](https://github.com/NREL/floris), [MoorPy v1.0](https://github.com/NREL/MoorPy) and [Pytorch v2.4](https://pytorch.org/).
+This repository is dependent on [Floris v4.1](https://github.com/NREL/floris), [MoorPy v1.0](https://github.com/NREL/MoorPy) and [Pytorch v2.4](https://pytorch.org/). If one wants to deploy the trained agent, [onnx](https://onnx.ai/) will be required for converting the neural networks,
 
 ## Quick Use
 RUn moor_matrix.py to see the mooring configurations.
