@@ -16,11 +16,7 @@ This is the code repository corresponding to the manuscript.
 </div>
 
 ## Requirements
-[Floris v4.1](https://github.com/NREL/floris)
-
-[MoorPy v1.0](https://github.com/NREL/MoorPy)
-
-[Pytorch v2.4](https://pytorch.org/)
+This repository is dependent on [Floris v4.1](https://github.com/NREL/floris), [MoorPy v1.0](https://github.com/NREL/MoorPy) and [Pytorch v2.4](https://pytorch.org/)
 
 ## 
 
