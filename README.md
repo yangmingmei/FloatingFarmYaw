@@ -26,5 +26,5 @@ run [floris_environment.py](./Training/floris_environment.py) to see the iterati
 run [main.py](./Training/main.py) to train a DRL agent for floating wind farm. 
 
 ## Future development
-This code repository is currently not a stable release. Documentation will be supplemented if the manuscript is accepted.
+This code repository is currently not a stable release. Documentations, as well as the codes for validation, will be supplemented if the manuscript is accepted.
 
