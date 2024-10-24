@@ -24,7 +24,7 @@ class moor_matrix():
         self.depth = 400  # water depth [m]
         self.angles = np.radians([45, 180, 315])  # line headings list [rad]
         self.rAnchor = 969  # anchor radius/spacing [m] %
-        self.lineLength = 1150  # line unstretched length [m]
+        self.lineLength = 1180  # line unstretched length [m]
         self.zFair = -21  # fairlead z elevation [m]
         self.rFair = 20  # fairlead radius [m]
 

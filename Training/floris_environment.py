@@ -8,6 +8,17 @@ from floris import FlorisModel
 import floris.flow_visualization as flowviz
 from mooring_matrix import moor_matrix
 from py_wake.examples.data import example_data_path
+import floris.layout_visualization as layoutviz
+from matplotlib import rcParams
+from matplotlib.colors import LinearSegmentedColormap
+
+config = {
+    "font.family": 'Times New Roman',
+    "axes.unicode_minus": False,
+    'xtick.direction': 'in',
+    'ytick.direction': 'in'
+}
+rcParams.update(config)
 
 
 class Environment:
@@ -18,6 +29,7 @@ class Environment:
         # simulation setup
         self.fmodel = FlorisModel(r"..\inputs_floating\emgauss_floating.yaml")
 
+        self.iteration_num = 6
         x, y = np.meshgrid(np.linspace(0, 4 * 1600, 5), np.linspace(0, 3 * 1600, 4))
         self.x = x.flatten()
         self.y = y.flatten()
@@ -107,16 +119,17 @@ class Environment:
         self.N = self.fmodel.n_turbines
         self.fmodel.core.farm.tilt_angles = 10 * np.ones((1, self.fmodel.n_turbines))
 
-        Yaw_angles = np.array([30, -30, 0, 20, 0,
-                               20, -20, 0, 20, 0,
-                               20, -20, 0, 20, 0,
-                               30, -30, 0, 20, 0])
+        Yaw_angles = np.array([16, -14, 7, -7, 0,
+                            16, -14, 7, -7, 0,
+                            16, -14, 7, -7, 0,
+                            16, -14, 7, -7, 0])
+        # Yaw_angles = np.zeros([1, 20])
         Yaw_angles = Yaw_angles.reshape([1, self.N])
-        self.fmodel.set(yaw_angles=Yaw_angles)
+        self.fmodel.set(yaw_angles= -Yaw_angles)
 
-        for i in range(3):
+        for i in range(self.iteration_num):
             self.fmodel.set(layout_x=x_reposition.flatten(), layout_y=y_reposition.flatten())
-            self.fmodel.set(yaw_angles=Yaw_angles + self.position[3])
+            self.fmodel.set(yaw_angles= - Yaw_angles + self.position[3] * 60 / np.pi)
             x_reposition = self.x + self.position[0]
             y_reposition = self.y + self.position[1]
             self.fmodel.run()
@@ -142,7 +155,7 @@ class Environment:
         return obs
 
     def step(self, action):
-        Yaw_angles = np.reshape(action, [1, self.N]) + self.position[3]
+        Yaw_angles = np.reshape(action, [1, self.N]) + self.position[3]*180/np.pi
 
         # set and run the floris model
         x_reposition = self.x + self.position[0]
@@ -215,12 +228,36 @@ class Environment:
         print(f'wind turbine power {power},  \n wind farm power {np.sum(power)}')
 
         # Create the plots
-        fig, ax_list = plt.subplots(2, 1, figsize=(10, 8))
-        ax_list = ax_list.flatten()
-        flowviz.visualize_cut_plane(self.horizontal_planes_set[i], ax=ax_list[0], title="Horizontal")
-        flowviz.visualize_cut_plane(self.y_planes_set[i], ax=ax_list[1], title="Streamwise profile")
-        fig.suptitle("Floating farm")
-        plt.show()
+        # fig, ax_list = plt.subplots(2, 1, figsize=(10, 8))
+        # ax_list = ax_list.flatten()
+        # flowviz.visualize_cut_plane(self.horizontal_planes_set[i], ax=ax_list[0], title="Horizontal")
+        # flowviz.visualize_cut_plane(self.y_planes_set[i], ax=ax_list[1], title="Streamwise profile")
+        # fig.suptitle("Floating farm")
+        # plt.show()
+        turbine_names = ["WT-1", "WT-2", "WT-3", "WT-4", "WT-5",
+                         "WT-6", "WT-7", "WT-8", "WT-9", "WT-10",
+                         "WT-11", "WT-12", "WT-13", "WT-14", "WT-15",
+                         "WT-16", "WT-17", "WT-18", "WT-19", "WT-20"]
+        fig, ax_list = plt.subplots()
+        flowviz.visualize_cut_plane(self.horizontal_planes_set[i], ax=ax_list,
+                                    label_contours=False, cmap='Spectral', )
+        # 'Diverging',
+        #                      ['PiYG', 'PRGn', 'BrBG', 'PuOr', 'RdGy', 'RdBu', 'RdYlBu',
+        #                       'RdYlGn', 'Spectral', 'coolwarm', 'bwr', 'Spectral'])
+        layoutviz.plot_turbine_rotors(self.fmodel, ax=ax_list)
+        layoutviz.plot_turbine_labels(self.fmodel, ax=ax_list, turbine_names=turbine_names)
+        plt.xlabel('X-coordinate(m)', fontsize=15)
+        plt.ylabel('Y-coordinate(m)', fontsize=15)
+        plt.tick_params(labelsize=15)
+
+        u_at_points = self.fmodel.sample_flow_at_points(np.array([146]), np.array([-6.8]), np.array([150]))
+
+        if i == self.iteration_num-1:
+
+            plt.savefig('./figures/Spectral_yaw_16deg_2.svg', dpi=600)
+            print(u_at_points)
+            print('savefig already')
+            plt.show()
 
     def save(self, name):
 
