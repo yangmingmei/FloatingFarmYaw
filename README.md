@@ -8,7 +8,7 @@ This is the code repository corresponding to our manuscript.
  Subsequently, using this model, a model-based DRL scheme is established. The key feature of the scheme is to use the simplified model to assist the training and deployment of the DRL agent, thereby reducing reliance on field measurements. Finally, simulation results on a dynamic wind farm simulator FAST.Farm show that, the proposed scheme can achieve 8.74\% more energy generation in a 20×15 MW floating wind farm compared with conventional yaw control method.
  
 <div align=center>
-     <img src="Results/illustration.png" height="180"/> 
+     <img src="Results/illustration.png" height="160"/> 
 </div>
 <div align=center>
       Fig.1 The illustration of floating offshore wind turbine repositioning (a) A two-turbine array configuration (b) Top view of the turbine repositioning with yaw control
