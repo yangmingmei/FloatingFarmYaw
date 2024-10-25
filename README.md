@@ -31,7 +31,7 @@ run [mooring_matrix.py](./Training/mooring_matrix.py) to see the mooring configu
 
 run [floris_environment.py](./Training/floris_environment.py) to see the iteration process of the model.
 
-run [main.py](./Training/main.py) to train a DRL agent for floating wind farm yaw control. 
+run [main.py](./Training/main.py) to train a DRL agent for floating wind farm yaw control (it may take quite a long time). 
 
 ## Acknowledgement
 This work was supported by the National Natural Science Foundation of China under Grant 52077165. (Principle investigator: [Peng Kou](https://gr.xjtu.edu.cn/en/web/koupeng))
