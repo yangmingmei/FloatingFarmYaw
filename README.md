@@ -34,7 +34,7 @@ run [floris_environment.py](./Training/floris_environment.py) to see the iterati
 run [main.py](./Training/main.py) to train a DRL agent for floating wind farm yaw control. 
 
 ## Acknowledgement
-This work was supported by the National Natural Science Foundation of China under Grant 52477062. (Principal investigator: Peng Kou)
+This work was supported by the National Natural Science Foundation of China under Grant 52477062. (Principle investigator: Peng Kou)
 
 ## Future development
 This code repository is currently not a final release. Documentations, as well as the codes for validation on Fast.Farm, will be released if our manuscript is accepted.
