@@ -5,7 +5,7 @@ This is the code repository corresponding to our manuscript.
 
 ## Brief Summary
  Our manuscript proposes a model-based deep reinforcement learning (DRL) framework to maximize the total power output of a floating offshore wind farm subject to wake effect. Recognizing the extensive interactions required for DRL training and the partially observable nature of wind farm dynamics, we first develop a physics-based, simplified model that captures the aerodynamic interactions among floating wind turbines. The high computational efficiency of this model enables it to support DRL training and deployment.
- Subsequently, using this model, a model-based DRL scheme is established. The key feature of the scheme is to use the simplified model to assist the training and deployment of the DRL agent, thereby reducing reliance on field measurements. Finally, the effectiveness of the proposed model-based DRL scheme is validated by case studies with a dynamic floating wind farm simulator FAST.Farm.
+ Subsequently, using this model, a model-based DRL scheme is established. The key feature of the scheme is to use the simplified model to assist the training and deployment of the DRL agent, thereby reducing reliance on field measurements. Finally, simulation results on a dynamic wind farm simulator FAST.Farm show that, the proposed scheme can achieve 8.74\% more energy generation in a 20×15 MW floating wind farm compared with conventional yaw control method.
 
 <div align=center>
      <img src="Results/Wind Farm.png" height="480"/> 
@@ -23,8 +23,8 @@ run [mooring_matrix.py](./Training/mooring_matrix.py) to see the mooring configu
 
 run [floris_environment.py](./Training/floris_environment.py) to see the iteration process of the model.
 
-run [main.py](./Training/main.py) to train a DRL agent for floating wind farm. 
+run [main.py](./Training/main.py) to train a DRL agent for floating wind farm yaw control. 
 
 ## Future development
-This code repository is currently not a stable release. Documentations, as well as the codes for validation on Fast.Farm, will be released if the manuscript is accepted.
+This code repository is currently not a final release. Documentations, as well as the codes for validation on Fast.Farm, will be released if our manuscript is accepted.
 
