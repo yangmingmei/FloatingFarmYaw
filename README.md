@@ -16,7 +16,7 @@ This is the code repository corresponding to our manuscript.
 </div>
 
 <div align=center>
-     <img src="Results/illustration.png" height="120"/> 
+     <img src="Results/illustration.png" height="180"/> 
 </div>
 <div align=center>
       Fig.1 The illustration of floating offshore wind turbine repositioning (a) A two-turbine array configuration (b) Top view of the turbine repositioning with yaw control
