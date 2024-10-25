@@ -23,7 +23,7 @@ run [mooring_matrix.py](./Training/mooring_matrix.py) to see the mooring configu
 
 run [floris_environment.py](./Training/floris_environment.py) to see the iteration process of the model.
 
-run [main.py](./Training/main.py) to train a DRL agent for floating wind farm. 
+run [main.py](./Training/main.py) to train a DRL agent for floating wind farm yaw control. 
 
 ## Future development
 This code repository is currently not a final release. Documentations, as well as the codes for validation on Fast.Farm, will be released if the manuscript is accepted.
