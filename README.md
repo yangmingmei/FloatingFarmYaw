@@ -24,7 +24,7 @@ This is the code repository corresponding to our manuscript.
 
 
 ## Requirements
-This repository is dependent on [Floris v4.1](https://github.com/NREL/floris), [MoorPy v1.0](https://github.com/NREL/MoorPy), [Pytorch v2.4](https://pytorch.org/) and field measurements from [Pywake](https://github.com/DTUWindEnergy/PyWake). If someone wants to deploy the trained agent, [onnx](https://onnx.ai/) will alse be required for converting the deep neural networks.
+This repository is dependent on [Floris v4](https://github.com/NREL/floris), [MoorPy v1.0](https://github.com/NREL/MoorPy), [Pytorch v2.4](https://pytorch.org/) and field measurements from [Pywake](https://github.com/DTUWindEnergy/PyWake). If someone wants to deploy the trained agent, [onnx](https://onnx.ai/) will alse be required for converting the deep neural networks.
 
 ## Quick Use
 run [mooring_matrix.py](./Training/mooring_matrix.py) to see the mooring configurations.
