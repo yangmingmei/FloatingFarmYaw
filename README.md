@@ -20,7 +20,7 @@ Note well：This repository is still under heavy development
      <img src="Results/Wind Farm.png" height="480"/> 
 </div>
 <div align=center>
-      Fig.2 Simulation results (a) Simplified model (b) Fast.Farm model under the under the model based DRL 
+      Fig.2 Simulation results (a) Simplified model (b) Fast.Farm model under the model-based DRL scheme
       and (c) Simplified model (d) Fast.Farm model under the under conventional yaw control.
 </div>
 
