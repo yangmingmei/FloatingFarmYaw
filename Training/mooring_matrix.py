@@ -30,7 +30,7 @@ class moor_matrix():
 
         self.tab_um = 21
         self.FX = np.linspace(-3.5e6, 3.5e6, self.tab_um)
-        self.FY = np.linspace(-2.5e6, 2.5e6, self.tab_um)
+        self.FY = np.linspace(-3e6, 3e6, self.tab_um)
         self.matrix_xtab = np.zeros([self.tab_um, self.tab_um])
         self.matrix_ytab = np.zeros([self.tab_um, self.tab_um])
         self.matrix_rytab = np.zeros([self.tab_um, self.tab_um])
@@ -112,5 +112,5 @@ if __name__ == "__main__":
     moor_matrix = moor_matrix()
     moor_matrix.get_mooring_matrix(visualize=True)
     position = moor_matrix.get_position(([3e6, 2e6, 1e6], [2e6, 1e6, 0.75e6]))
-    print(f" Body offset position under force [3e6, 2e6, 1e6] and [2e6, 1e6, 0.75e6] is respectively  ")
+    print(f" Body offset positions under force [3e6, 2e6, 1e6] and [2e6, 1e6, 0.75e6] are respectively  ")
     print(f"Surge: {position[0]} Sway: {position[1]} pitch: {position[2]} yaw: {position[3]} ")

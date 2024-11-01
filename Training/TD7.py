@@ -16,7 +16,7 @@ class Hyperparameters:
     # Generic
     batch_size: int = 512
     buffer_size: int = 1e6
-    discount: float = 0.99
+    discount: float = 0  # default = 0.99
     target_update_rate: int = 250
     exploration_noise: float = 0.1
 
@@ -203,7 +203,7 @@ class Agent(object):
             self.actor.load_state_dict(torch.load(self.model_path + '/' + args.load_name + '_actor_params.pkl'))
             self.critic.load_state_dict(torch.load(self.model_path + '/' + args.load_name + '_critic_params.pkl'))
             a = torch.load(self.model_path + '/' + args.load_name + '_encoder_params.pkl')
-            self.encoder.load_state_dict(torch.load(self.model_path + '/' + args.load_name + '_encoder_params.pkl'))
+            self.fixed_encoder.load_state_dict(torch.load(self.model_path + '/' + args.load_name + '_encoder_params.pkl'))
             print('Agent successfully loaded actor_network: {}'.format(self.model_path + '/' + args.load_name +
                                                                        '_actor_params.pkl'))
             print('Agent successfully loaded critic_network: {}'.format(self.model_path + '/' + args.load_name
@@ -347,7 +347,7 @@ class Agent(object):
         self.min_return = 1e8
 
     def save_model(self, save_name):
-        torch.save(self.actor.state_dict(), self.model_path + '/' + save_name + '_actor_params.pkl')
-        torch.save(self.critic.state_dict(), self.model_path + '/' + save_name + '_critic_params.pkl')
-        torch.save(self.encoder.state_dict(), self.model_path + '/' + save_name + '_encoder_params.pkl')
+        torch.save(self.actor_target.state_dict(), self.model_path + '/' + save_name + '_actor_params.pkl')
+        torch.save(self.critic_target.state_dict(), self.model_path + '/' + save_name + '_critic_params.pkl')
+        torch.save(self.fixed_encoder_target.state_dict(), self.model_path + '/' + save_name + '_encoder_params.pkl')
         print(f'save already {save_name}')

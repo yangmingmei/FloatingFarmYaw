@@ -40,6 +40,9 @@ def train_online(RL_agent, env, eval_env, args):
             RL_agent.train()
 
         if ep_finished:
+            print(f'starting from the {env.day_start}th day in field measurements')
+            print(f'Wind speed: {env.wind_speed_profile[0, 0]}(m/s)  '
+                  f'direction: {env.wind_direction_profile[0, 0]}(deg)')
             print(f"Total T: {t + 1} Episode Num: {ep_num} Episode T: {ep_timesteps} Reward: {ep_total_reward:.3f}")
 
             if allow_train and args.use_checkpoints:
@@ -75,7 +78,8 @@ def maybe_evaluate_and_print(RL_agent, eval_env, evals, t, start_time, args, d4r
             state, done = eval_env.reset(visualize=False), False
             while not done:
                 action = RL_agent.select_action(np.array(state), args.use_checkpoints, use_exploration=False)
-                print(action)
+                if args.load_model:
+                    print(np.array(action))
                 state, reward, done, _ = eval_env.step(action)
                 total_reward[ep] += reward
 
@@ -94,18 +98,18 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # RL
     parser.add_argument("--env", default="FloatingFarmYaw", type=str)
-    parser.add_argument("--seed", default=0, type=int)
+    parser.add_argument("--seed", default=2024, type=int)
     parser.add_argument("--offline", default=False, action=argparse.BooleanOptionalAction)
-    parser.add_argument('--use_checkpoints', default=True, action=argparse.BooleanOptionalAction)
+    parser.add_argument('--use_checkpoints', default=False, action=argparse.BooleanOptionalAction)
     # Evaluation
     parser.add_argument("--timesteps_before_training", default=2e3, type=int)
     parser.add_argument("--eval_freq", default=2e3, type=int)
     parser.add_argument("--eval_eps", default=1, type=int)
-    parser.add_argument("--max_timesteps", default=6.1e3, type=int)
+    parser.add_argument("--max_timesteps", default=16e3, type=int)
     # save and load pretrained model
-    parser.add_argument("--load_model", default=False, action=argparse.BooleanOptionalAction)
-    parser.add_argument("--load_name", default="20240920", type=str)
-    parser.add_argument("--save_name", default="20240920", type=str)
+    parser.add_argument("--load_model", default=True, action=argparse.BooleanOptionalAction)
+    parser.add_argument("--load_name", default="20240928", type=str)
+    parser.add_argument("--save_name", default="20240928", type=str)
     # File
     parser.add_argument('--file_name', default=None)
     parser.add_argument('--d4rl_path', default="./d4rl_datasets", type=str)
@@ -123,7 +127,7 @@ if __name__ == "__main__":
     if not os.path.exists("./results"):
         os.makedirs("./results")
 
-    env = floris_environment.Environment(evaluation=True)
+    env = floris_environment.Environment(evaluation=False)
     eval_env = floris_environment.Environment(evaluation=True)
 
     print("---------------------------------------")
@@ -132,7 +136,6 @@ if __name__ == "__main__":
 
     env.reset(visualize=False)
     torch.manual_seed(args.seed)
-    # np.random.seed(args.seed)
 
     state_dim = env.observation_dim
     action_dim = env.action_dim
