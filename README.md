@@ -1,7 +1,7 @@
 # FloatingFarmYaw
 This is the code repository corresponding to our manuscript. 
 
-“Floating Offshore Wind Farm Yaw Control via Model-based Deep Reinforcement Learning”, Acceoted by IEEE Power & Energy Society General Meeting, 2025. [Mingyang Mei](https://scholar.google.com/citations?user=jpXmO2UAAAAJ&hl=zh-CN), Peng Kou, Yilin Xu, [Zhihao Zhang](https://scholar.google.com/citations?hl=zh-CN&user=Qfr4gA4AAAAJ), Runze Tian, Deliang Liang. (Corresponding author: [Peng Kou](https://gr.xjtu.edu.cn/en/web/koupeng))
+“Floating Offshore Wind Farm Yaw Control via Model-based Deep Reinforcement Learning”, Accepted by IEEE Power & Energy Society General Meeting, 2025. [Mingyang Mei](https://scholar.google.com/citations?user=jpXmO2UAAAAJ&hl=zh-CN), Peng Kou, Yilin Xu, [Zhihao Zhang](https://scholar.google.com/citations?hl=zh-CN&user=Qfr4gA4AAAAJ), Runze Tian, Deliang Liang. (Corresponding author: [Peng Kou](https://gr.xjtu.edu.cn/en/web/koupeng))
 
 Thanks to the reviwers and the chair.
 
