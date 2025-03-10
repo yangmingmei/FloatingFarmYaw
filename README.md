@@ -44,9 +44,9 @@ This work was supported by the National Natural Science Foundation of China unde
 ## Future development
 This code repository is currently not a final release. Documentations, as well as the codes for validation on FAST.Farm, will be released.
 
-<div align=center>
-     <img src="Results/2月26日.mp4" height="480"/> 
-</div>
+
+https://github.com/user-attachments/assets/e78fd109-8298-4f4e-9a46-8ca7bcad6fa8
+
 <div align=center>
     Validation on FAST.Farm
 </div>
