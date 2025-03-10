@@ -42,7 +42,14 @@ run [main.py](./Training/main.py) to train a DRL agent for floating wind farm ya
 This work was supported by the National Natural Science Foundation of China under Grant 52077165. (Principle investigator: [Peng Kou](https://gr.xjtu.edu.cn/en/web/koupeng))
 
 ## Future development
-This code repository is currently not a final release. Documentations, as well as the codes for validation on FAST.Farm, will be released if our manuscript is accepted.
+This code repository is currently not a final release. Documentations, as well as the codes for validation on FAST.Farm, will be released.
+
+<div align=center>
+     <img src="Results/2月26日.mp4" height="480"/> 
+</div>
+<div align=center>
+    Validation on FAST.Farm
+</div>
 
 ## License
 This project is licensed under the terms of the [Apache License Version 2.0](LICENSE)
