@@ -48,7 +48,7 @@ This code repository is currently not a final release. Documentations, as well a
 https://github.com/user-attachments/assets/e78fd109-8298-4f4e-9a46-8ca7bcad6fa8
 
 <div align=center>
-    Validation on FAST.Farm
+    Validation on a utility-scale floating wind farm with water depth of 400~450 m 
 </div>
 
 ## License
