@@ -1,6 +1,8 @@
 # FloatingFarmYaw
 This repository contains the code for the manuscript "Floating Offshore Wind Farm Yaw Control via Model-based Deep Reinforcement Learning," accepted by the IEEE Power & Energy Society General Meeting 2025. The authors are Mingyang Mei, Peng Kou, Yilin Xu, Zhihao Zhang, Runze Tian, and Deliang Liang, with Peng Kou as the corresponding author.
+
 An extended version of this work, titled "Improving Floating Offshore Wind Farm Flow Control with Scalable Model-based Deep Reinforcement Learning," has been accepted for publication in IEEE Transactions on Automation Science and Engineering.
+
 For more information about the repository authors:
 
 Mingyang Mei: [Google Scholar](https://scholar.google.com/citations?user=jpXmO2UAAAAJ&hl=zh-CN)
