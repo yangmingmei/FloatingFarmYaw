@@ -32,11 +32,11 @@ N.B. This code repository is currently not a final release.
 This repository is dependent on [Floris v4](https://github.com/NREL/floris), [MoorPy v1.0](https://github.com/NREL/MoorPy), [Pytorch v2.4](https://pytorch.org/) and field measurements from [Pywake](https://github.com/DTUWindEnergy/PyWake). If someone wants to deploy the trained agent, [onnx](https://onnx.ai/) will also be required for converting the deep neural networks.
 
 ## Quick Use
-run [mooring_matrix.py](./Training/mooring_matrix.py) to see the mooring configurations.
+run [mooring_matrix.py](mooring_matrix.py) to see the mooring configurations.
 
-run [floris_environment.py](./Training/floris_environment.py) to see the iteration process of the model.
+run [floris_environment.py](floris_environment.py) to see the iteration process of the model.
 
-run [main.py](./Training/main.py) to train a DRL agent for floating wind farm yaw control (it may take quite a long time). 
+run [main.py](main.py) to train a DRL agent for floating wind farm yaw control (it may take quite a long time). 
 
 ## Acknowledgement
 This work was supported by the National Natural Science Foundation of China under Grant 52077165. (Principle investigator: [Peng Kou](https://gr.xjtu.edu.cn/en/web/koupeng))
