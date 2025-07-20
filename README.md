@@ -1,11 +1,14 @@
 # FloatingFarmYaw
-This is the code repository corresponding to our manuscript. 
+This repository contains the code for the manuscript "Floating Offshore Wind Farm Yaw Control via Model-based Deep Reinforcement Learning," accepted by the IEEE Power & Energy Society General Meeting 2025. The authors are Mingyang Mei, Peng Kou, Yilin Xu, Zhihao Zhang, Runze Tian, and Deliang Liang, with Peng Kou as the corresponding author.
 
-“Floating Offshore Wind Farm Yaw Control via Model-based Deep Reinforcement Learning”, Accepted by IEEE Power & Energy Society General Meeting, 2025. [Mingyang Mei](https://scholar.google.com/citations?user=jpXmO2UAAAAJ&hl=zh-CN), Peng Kou, Yilin Xu, [Zhihao Zhang](https://scholar.google.com/citations?hl=zh-CN&user=Qfr4gA4AAAAJ), Runze Tian, Deliang Liang. (Corresponding author: [Peng Kou](https://gr.xjtu.edu.cn/en/web/koupeng))
+An extended version of this work, titled "Improving Floating Offshore Wind Farm Flow Control with Scalable Model-based Deep Reinforcement Learning," has been accepted for publication in IEEE Transactions on Automation Science and Engineering.
 
-Thanks to the reviwers and the chair.
+For more information about the repository authors:
 
-N.B. This code repository is currently not a final release.
+Mingyang Mei: [Google Scholar](https://scholar.google.com/citations?user=jpXmO2UAAAAJ&hl=zh-CN)
+Peng Kou: [Xian Jiaotong University Homepage](https://gr.xjtu.edu.cn/en/web/koupeng)
+
+Note: This code repository is still under development and is not yet a final release.
 
 
 ## Brief Summary
@@ -48,7 +51,7 @@ This code repository is currently not a final release. Documentations, as well a
 https://github.com/user-attachments/assets/e78fd109-8298-4f4e-9a46-8ca7bcad6fa8
 
 <div align=center>
-    Validation on FAST.Farm
+    Validation on a utility-scale floating wind farm with water depth of 400~450 m 
 </div>
 
 ## License
