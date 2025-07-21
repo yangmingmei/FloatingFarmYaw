@@ -23,8 +23,7 @@ Note: This code repository is still under development and is not yet a final rel
      <img src="Results/Wind Farm.png" height="480"/> 
 </div>
 <div align=center>
-      Fig.2 Simulation results (a) Simplified model (b) Fast.Farm model under the model-based DRL scheme
-      and (c) Simplified model (d) Fast.Farm model under the under conventional yaw control.
+      Fig.2 Simulation results (a) Time-averaged model with yaw control (b) Fast.Farm model with yaw control (c) Time-averaged model without yaw control (d) Fast.Farm model without yaw control.
 </div>
 
 
