@@ -37,12 +37,16 @@ This repository is dependent on [Floris v4](https://github.com/NREL/floris), [Mo
 
 ## Quick Use
 
-1. clone the repository ```pycon
+1. clone the repository
+```pycon
 git clone https://github.com/yangmingmei/FloatingFarmYaw.git
 ```
+2. Install the dependency using pip
 ```pycon
 pip install . -e
 ```
+3. Install PyTorch (you must choose the right CUDA version):
+See: https://pytorch.org/get-started/locally/ This step is optional. Pytorch is only necessary for DRL training
 
 run [mooring_matrix.py](mooring_matrix.py) to see the mooring configurations.
 
