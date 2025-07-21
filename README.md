@@ -34,8 +34,10 @@ Note: This code repository is still under development and is not yet a final rel
 ## Requirements
 This repository is dependent on [Floris v4](https://github.com/NREL/floris), [MoorPy v1.0](https://github.com/NREL/MoorPy), [Pytorch v2.4](https://pytorch.org/) and field measurements from [Pywake](https://github.com/DTUWindEnergy/PyWake). If someone wants to deploy the trained agent, [onnx](https://onnx.ai/) will also be required for converting the deep neural networks.
 
+
 ## Quick Use
-```pycon
+
+1. clone the repository ```pycon
 git clone https://github.com/yangmingmei/FloatingFarmYaw.git
 ```
 ```pycon
