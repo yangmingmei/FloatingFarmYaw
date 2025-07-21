@@ -51,8 +51,8 @@ See: https://pytorch.org/get-started/locally/. This step is optional because Pyt
 4. run [mooring_matrix.py](mooring_matrix.py) to see the mooring configurations.
    
 5. run [floris_environment.py](floris_environment.py) to see the iteration process of the model.
-6. 
-7. run [main.py](main.py) to train a DRL agent for floating wind farm yaw control (it may take quite a long time). 
+
+6. run [main.py](main.py) to train a DRL agent for floating wind farm yaw control (it only take 3 hours when using massively parallel simulations). 
 
 ## Acknowledgement
 This work was supported by the National Natural Science Foundation of China under Grant 52077165. (Principle investigator: [Peng Kou](https://gr.xjtu.edu.cn/en/web/koupeng))
