@@ -10,8 +10,6 @@ For more information about the repository authors:
 Mingyang Mei: [Google Scholar](https://scholar.google.com/citations?user=jpXmO2UAAAAJ&hl=zh-CN)
 Peng Kou: [Xian Jiaotong University Homepage](https://gr.xjtu.edu.cn/en/web/koupeng)
 
-Note: This code repository is still under development and is not yet a final release.
- 
 <div align=center>
      <img src="Results/illustration.png" height="175"/> 
 </div>
