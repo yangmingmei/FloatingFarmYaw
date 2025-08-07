@@ -54,7 +54,7 @@ See: https://pytorch.org/get-started/locally/. This step is optional because Pyt
 This work was supported by the National Natural Science Foundation of China under Grant 52077165. (Principle investigator: [Peng Kou](https://gr.xjtu.edu.cn/en/web/koupeng))
 
 ## Future development
-This code repository is currently not a final release. Documentations, as well as the codes for validation on FAST.Farm, will be released. Moreover, the code is fully compatible with the anual energy production and layout optimization method used in FLORIS. This allows the users to further explore its potantial.
+This code repository is currently not a final release and under development. Documentations, as well as the codes for validation on FAST.Farm, will be released. Moreover, the code is fully compatible with the anual energy production and layout optimization method used in FLORIS. This allows the users to further explore its potantial.
 
 
 https://github.com/user-attachments/assets/e78fd109-8298-4f4e-9a46-8ca7bcad6fa8
