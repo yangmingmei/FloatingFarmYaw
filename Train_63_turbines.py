@@ -4,11 +4,8 @@ import time
 import numpy as np
 import torch
 import TD7
-import floris_63_turbine_env_v1p4
-# 0801 first, reward is energy
-# 0802 first, reward is energy and yaw(good)
+import floris_63_floating_turbines
 
-# 0901 first, reward is energy and yaw(sensory noise)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 

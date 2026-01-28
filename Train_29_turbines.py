@@ -4,7 +4,7 @@ import time
 import numpy as np
 import torch
 import TD7
-import floris_29_turbine_env_v1p4
+import floris_29_floating_turbines
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
