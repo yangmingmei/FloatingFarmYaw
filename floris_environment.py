@@ -26,7 +26,7 @@ class Environment:
          collecting data files
         """
         # simulation setup
-        self.fmodel = FlorisModel(r"Inputs/emgauss_floating.yaml")
+        self.fmodel = FlorisModel(r"inputs_floating/emgauss_floating.yaml")
         self.fmodel.set(turbine_type=['iea_15MW'])
         FlorisModel.assign_hub_height_to_ref_height(self.fmodel)
 
@@ -143,15 +143,6 @@ class Environment:
                                16, -14, 7, -7, 0,
                                16, -14, 7, -7, 0,
                                16, -14, 7, -7, 0])
-        # Yaw_angles = np.array([-21.309078, 23.364592, 3.8631878, - 26.064625, 16.051409, 21.02423,
-        #                        - 24.655594, - 4.2792993, 25.919191, - 14.875843, - 22.100471, 18.923973,
-        #                        - 19.735582, 22.962261, - 7.8848705, - 22.344395, 18.467663, - 19.431631,
-        #                        22.612972, - 11.114875])
-        # Yaw_angles = np.array([-22.590303, 19.78203, - 17.770546, 23.451992, - 10.3017, 21.510345,
-        #                        - 19.543684, 18.991922, - 21.928532, 12.345204, - 22.587929, 18.460304,
-        #                        - 19.628523, 21.331757, - 11.954666, 22.294044, - 20.606354, 15.422161,
-        #                        - 25.18711, 10.073893])
-        # Yaw_angles = np.zeros([1, self.N])
         Yaw_angles = Yaw_angles.reshape([1, self.N])
         self.fmodel.set(yaw_angles=-Yaw_angles)
 

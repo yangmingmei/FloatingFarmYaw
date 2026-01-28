@@ -15,7 +15,7 @@ class Hyperparameters:
     # Generic
     batch_size: int = 512
     buffer_size: int = 1e6
-    discount: float = 0  # default = 0.99
+    discount: float = 0.0  # default = 0.99
     target_update_rate: int = 250
     exploration_noise: float = 0.1
 
@@ -163,7 +163,8 @@ class Agent(object):
         self.fixed_encoder = copy.deepcopy(self.encoder)
         self.fixed_encoder_target = copy.deepcopy(self.encoder)
 
-        self.checkpoint_actor = copy.deepcopy(self.actor)
+        self.\
+            _actor = copy.deepcopy(self.actor)
         self.checkpoint_encoder = copy.deepcopy(self.encoder)
 
         self.replay_buffer = buffer.LAP(state_dim, action_dim, self.device, hp.buffer_size, hp.batch_size,
@@ -188,7 +189,7 @@ class Agent(object):
         self.min_target = 0
 
         # save
-        self.save_dir = './model'
+        self.save_dir = 'model'
         if not os.path.exists(self.save_dir):
             os.mkdir(self.save_dir)
         # path to save the model
@@ -203,6 +204,10 @@ class Agent(object):
             self.critic.load_state_dict(torch.load(self.model_path + '/' + args.load_name + '_critic_params.pkl'))
             a = torch.load(self.model_path + '/' + args.load_name + '_encoder_params.pkl')
             self.fixed_encoder.load_state_dict(torch.load(self.model_path + '/' + args.load_name + '_encoder_params.pkl'))
+            self.fixed_encoder_target = copy.deepcopy(self.fixed_encoder)
+            self.encoder = copy.deepcopy(self.fixed_encoder)
+            self.critic_target = copy.deepcopy(self.critic)
+            self.actor_target = copy.deepcopy(self.actor)
             print('Agent successfully loaded actor_network: {}'.format(self.model_path + '/' + args.load_name +
                                                                        '_actor_params.pkl'))
             print('Agent successfully loaded critic_network: {}'.format(self.model_path + '/' + args.load_name
@@ -214,7 +219,7 @@ class Agent(object):
 
     def select_action(self, state, use_checkpoint=False, use_exploration=True):
         with torch.no_grad():
-            state = torch.tensor(state.reshape(1, -1), dtype=torch.float, device=self.device)
+            state = torch.tensor(state, dtype=torch.float, device=self.device)
 
             if use_checkpoint:
                 zs = self.checkpoint_encoder.zs(state)
@@ -226,7 +231,7 @@ class Agent(object):
             if use_exploration:
                 action = action + torch.randn_like(action) * self.hp.exploration_noise
 
-            return action.clamp(-1, 1).cpu().data.numpy().flatten() * self.max_action
+            return action.clamp(-1, 1).cpu().data.numpy() * self.max_action
 
     def train(self):
         self.training_steps += 1

@@ -38,17 +38,48 @@ class LAP(object):
 
 	
 	def add(self, state, action, next_state, reward, done):
-		self.state[self.ptr] = state
-		self.action[self.ptr] = action/self.normalize_actions
-		self.next_state[self.ptr] = next_state
-		self.reward[self.ptr] = reward
-		self.not_done[self.ptr] = 1. - done
+		# 处理并行数据
+		n_parallel = state.shape[0]
 		
-		if self.prioritized:
-			self.priority[self.ptr] = self.max_priority
-
-		self.ptr = (self.ptr + 1) % self.max_size
-		self.size = min(self.size + 1, self.max_size)
+		# 确保ptr + n_parallel不会超过max_size
+		remaining_space = self.max_size - self.ptr
+		if remaining_space < n_parallel:
+			# 先填充剩余空间
+			self.state[self.ptr:self.max_size] = state[:remaining_space]
+			self.action[self.ptr:self.max_size] = action[:remaining_space]/self.normalize_actions
+			self.next_state[self.ptr:self.max_size] = next_state[:remaining_space]
+			self.reward[self.ptr:self.max_size] = reward[:remaining_space].reshape(-1, 1)
+			self.not_done[self.ptr:self.max_size] = (1. - done[:remaining_space]).reshape(-1, 1)
+			
+			if self.prioritized:
+				self.priority[self.ptr:self.max_size] = self.max_priority
+			
+			# 剩余数据从头开始存储
+			remaining_samples = n_parallel - remaining_space
+			self.state[:remaining_samples] = state[remaining_space:]
+			self.action[:remaining_samples] = action[remaining_space:]/self.normalize_actions
+			self.next_state[:remaining_samples] = next_state[remaining_space:]
+			self.reward[:remaining_samples] = reward[remaining_space:].reshape(-1, 1)
+			self.not_done[:remaining_samples] = (1. - done[remaining_space:]).reshape(-1, 1)
+			
+			if self.prioritized:
+				self.priority[:remaining_samples] = self.max_priority
+			
+			self.ptr = remaining_samples
+		else:
+			# 直接存储所有并行数据
+			self.state[self.ptr:self.ptr + n_parallel] = state
+			self.action[self.ptr:self.ptr + n_parallel] = action/self.normalize_actions
+			self.next_state[self.ptr:self.ptr + n_parallel] = next_state
+			self.reward[self.ptr:self.ptr + n_parallel] = reward.reshape(-1, 1)
+			self.not_done[self.ptr:self.ptr + n_parallel] = (1. - done).reshape(-1, 1)
+			
+			if self.prioritized:
+				self.priority[self.ptr:self.ptr + n_parallel] = self.max_priority
+			
+			self.ptr = (self.ptr + n_parallel) % self.max_size
+		
+		self.size = min(self.size + n_parallel, self.max_size)
 
 
 	def sample(self):
