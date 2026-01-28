@@ -48,7 +48,9 @@ See: https://pytorch.org/get-started/locally/. This step is optional because Pyt
    
 5. run [floris_environment.py](floris_environment.py) to see the iteration process of the model.
 
-6. run [Train_29_turbines.py](Train_29_turbines.py) to train a DRL agent for floating wind farm yaw control (it only take 3 hours when using massively parallel simulations). 
+6. run [Train_29_turbines.py](Train_29_turbines.py) to train a DRL agent for floating wind farm yaw control (it only take 3 hours when using massively parallel simulations).
+
+7. FAST.Farm files can be found in FAST.Farm.zip
 
 ## Acknowledgement
 This work was supported by the National Natural Science Foundation of China under Grant 52077165. (Principle investigator: [Peng Kou](https://gr.xjtu.edu.cn/en/web/koupeng))
